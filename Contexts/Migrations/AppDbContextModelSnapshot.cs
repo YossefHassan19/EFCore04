@@ -80,6 +80,32 @@ namespace EFCore04.Contexts.Migrations
                         .IsUnique();
 
                     b.ToTable("Branches");
+
+                    b.HasData(
+                        new
+                        {
+                            Code = "CAI-01",
+                            Address = "10 Tahrir Square, Cairo",
+                            ManagerId = 1,
+                            Name = "Cairo Main Branch",
+                            PhoneNumber = "0227000001"
+                        },
+                        new
+                        {
+                            Code = "ALX-01",
+                            Address = "5 Corniche Road, Alexandria",
+                            ManagerId = 2,
+                            Name = "Alexandria Branch",
+                            PhoneNumber = "0345000002"
+                        },
+                        new
+                        {
+                            Code = "GIZ-01",
+                            Address = "22 Pyramids Street, Giza",
+                            ManagerId = 3,
+                            Name = "Giza Branch",
+                            PhoneNumber = "0233000003"
+                        });
                 });
 
             modelBuilder.Entity("EFCore04.Entities.Customer", b =>
@@ -188,6 +214,32 @@ namespace EFCore04.Contexts.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Managers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "hassan.mahmoud@nbg.com",
+                            FullName = "Hassan Mahmoud",
+                            HireDate = new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01011112222"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "salma.adel@nbg.com",
+                            FullName = "Salma Adel",
+                            HireDate = new DateTime(2018, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01022223333"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "omar.khaled@nbg.com",
+                            FullName = "Omar Khaled",
+                            HireDate = new DateTime(2020, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01033334444"
+                        });
                 });
 
             modelBuilder.Entity("EFCore04.Entities.Transaction", b =>

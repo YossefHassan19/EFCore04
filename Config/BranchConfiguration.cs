@@ -1,4 +1,5 @@
-﻿using EFCore04.Entities;
+﻿using EFCore04.Contexts;
+using EFCore04.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -24,6 +25,8 @@ namespace EFCore04.Config
              .HasForeignKey<Branch>(b => b.ManagerId)
              .OnDelete(DeleteBehavior.Restrict);
             builder.HasIndex(b => b.ManagerId).IsUnique();
+
+            builder.HasData(SeedData.Branches);
 
         }
     }
